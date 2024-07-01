@@ -27,8 +27,6 @@ def dominant_color_image(image_path):
 
   # Create a mask where only pixels with dominant intensity remain non-zero
   mask = cv2.inRange(image, int(dominant_intensity)-1, int(dominant_intensity)+1)
-
-  # Apply the mask to extract the dominant color portion
   dominant_color_image = cv2.bitwise_and(image, image, mask=mask)
 
   return dominant_color_image
