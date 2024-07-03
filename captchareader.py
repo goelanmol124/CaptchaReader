@@ -16,5 +16,5 @@ start = time.time()
 image = Image.open(r'.\dominant_color.jpg')
 
 enc_image = model.encode_image(image)#.to(device)
-print(model.answer_question(enc_image, "What does the text say?", tokenizer))
+print(model.answer_question(enc_image, "What does captcha read?", tokenizer))
 print(time.time() - start)

@@ -27,12 +27,13 @@ def dominant_color_image(image_path):
 
   # Create a mask where only pixels with dominant intensity remain non-zero
   mask = cv2.inRange(image, int(dominant_intensity)-1, int(dominant_intensity)+1)
-  dominant_color_image = cv2.bitwise_and(image, image, mask=mask)
+  #dominant_color_image = cv2.bitwise_and(image, image, mask=mask)
+  bw_image = cv2.bitwise_not(mask)
 
-  return dominant_color_image
+  return bw_image#dominant_color_image
 
 # Example usage
-image_path = "test_captcha.png"
+image_path = "test_captcha6.png"
 dominant_image = dominant_color_image(image_path)
 
 # Save or display the dominant color image (BGR format)
